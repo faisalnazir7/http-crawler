@@ -8,8 +8,22 @@ test("normalizeURL strip protocol", () => {
     expect(actual).toEqual(expected)
 })
 
-test("normalizeURL strip protocol", () => {
+test("normalizeURL strip trailing slash", () => {
     const input = 'https://faisalnazir.tech/about/'
+    const actual = normalizeURL(input)
+    const expected = 'faisalnazir.tech/about'
+    expect(actual).toEqual(expected)
+})
+
+test("normalizeURL capitals", () => {
+    const input = 'https://FAISALNAZIR.tech/about'
+    const actual = normalizeURL(input)
+    const expected = 'faisalnazir.tech/about'
+    expect(actual).toEqual(expected)
+})
+
+test("normalizeURL strip http", () => {
+    const input = 'http://faisalnazir.tech/about'
     const actual = normalizeURL(input)
     const expected = 'faisalnazir.tech/about'
     expect(actual).toEqual(expected)
