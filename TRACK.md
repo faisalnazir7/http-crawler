@@ -1,1 +1,4 @@
-CREATE: tracker 
+# Track
+
+- Node Setup
+- Jest
