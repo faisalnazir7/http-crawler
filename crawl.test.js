@@ -60,3 +60,22 @@ test("getURLsFromHTML relative", () => {
     const expected = ["https://faisalnazir.tech/about/"]
     expect(actual).toEqual(expected)
 })
+
+test("getURLsFromHTML both", () => {
+    const inputHTML = `
+    <html>
+        <body>
+            <a href="/about/">
+                Faisal Nazir
+            </a>
+            <a href="/stats/">
+                Faisal Nazir
+            </a>
+        </body>
+    </html>
+    `
+    const inputBaseURL = "https://faisalnazir.tech"
+    const actual = getURLsFromHTML(inputHTML, inputBaseURL)
+    const expected = ["https://faisalnazir.tech/about/", "https://faisalnazir.tech/stats/"]
+    expect(actual).toEqual(expected)
+})
